@@ -1,0 +1,305 @@
+功能说明：用于显示文本，提示信息，如窗体标题，文本框的标题
+命名前缀：Lbl
+ASPX代码：<asp:Label ID="LblSample" runat="server" Text="Label Sample"></asp:Label>
+重要属性：Text          显示的文本
+ 
+HyperLink控件
+    功能说明：建立文本超链接或图片超链接
+    命名前缀：Hlk
+    ASPX代码：<asp:HyperLink ID="HlkSample" runat="server" NavigateUrl="www.sample.com.cn">Sample</asp:HyperLink>
+    重要属性：NavigateUrl   链接URL
+              ImageUrl      显示的图片URL
+              Target        目标框架的名称，如"_blank","_top"等
+ 
+Image控件
+    功能说明：用于显示图片
+    命名前缀：Img
+    ASPX代码：<asp:Image ID="ImgSample" runat="server" ImageUrl="build.ImgSample"  />
+    重要属性：ImageUrl      显示的图片URL
+ 
+Button控件
+    功能说明：用于创建按钮，执行命令
+    命名前缀：Btn
+    ASPX代码：<asp:Button ID="BtnSample" runat="server" Text="Sample" />
+    重要属性：Text          显示在按钮上的文本
+ 
+TextBox控件
+    功能说明：用于显示文本和接收用户输入的文本
+    命名前缀：Txt
+    ASPX代码：<asp:TextBox ID="TxtSample" runat="server" Text="TextBox Sample"></asp:TextBox>
+    重要属性：Text          显示在按钮上的文本
+              TextMode      设置文本的模式，"Single"为单行文本框，"Multiline"为多行文本框
+              Rows          当TextMode设置为"Multiline"时，文本框显示的行数
+              Columns       设置文本框的宽度
+              MaxLength     设置文本框允许输入的最多字符数
+ 
+CheckBox控件
+    功能说明：用于创建复选框
+    命名前缀：Chk
+    ASPX代码：<asp:CheckBox ID="ChkSample" runat="server" Text="CheckBox Sample" />
+    重要属性：Text          显示在复选框旁的文本
+              Checked       复选框的选择状态，True为选中，False为未选中
+ 
+RadioButton控件
+    功能说明：用于创建单选按钮
+    命名前缀：Rad
+    ASPX代码：<asp:RadioButton ID="RadSample" runat="server" GroupName="GroupOne" Text="RadioButton Sample" />
+    重要属性：Text          显示在单选按钮旁的文本
+              GroupName     属于通一组的单选按钮，即GroupName相同的单选按钮，只能有一个处于选中状态
+              Checked       单选按钮的选择状态，True为选中，False为未选中
+ 
+CheckBoxList控件
+    功能说明：用于创建一组复选框
+    命名前缀：ChkLst
+    ASPX代码：<asp:CheckBoxList ID="ChkLstSample" runat="server">
+                <asp:ListItem Value="1">选项1</asp:ListItem>
+                <asp:ListItem Value="2">选项2</asp:ListItem>
+              </asp:CheckBoxList>
+    重要属性：Items         复选框列表中复选框集合
+              Selected      Items集合元素属性，对应复选框选择状态
+ 
+RadioButtonList控件
+    功能说明：用于创建一组单选按钮
+    命名前缀：RadLst
+    ASPX代码：<asp:RadioButtonList ID="RadLstSample" runat="server">
+                <asp:ListItem Value="1">选项1</asp:ListItem>
+                <asp:ListItem Value="2">选项2</asp:ListItem>
+              </asp:RadioButtonList>
+    重要属性：SelectedItem  单选按钮集合中选择状态为选中的单选按钮
+ 
+ListBox控件
+    功能说明：用于创建列表框
+    命名前缀：Lst
+    ASPX代码：<asp:ListBox ID="LstSample" runat="server">
+                <asp:ListItem Value="1">选项1</asp:ListItem>
+                <asp:ListItem Value="2">选项2</asp:ListItem>
+              </asp:ListBox>
+    重要属性：SelectionMode 列表框的的选择模式，"Single"为单项选择，"Multiline"为多项选择
+              Items         列表框的选项集合
+              Selected      Items集合元素属性，对应选项的选择状态，True为选中，False为未选中
+ 
+DropDownList控件
+    功能说明：用于创建下拉列表框，只能进行单项选择
+    命名前缀：DdwLst
+    ASPX代码：<asp:DropDownList ID="DdwLstSample" runat="server">
+                <asp:ListItem Value="1">选项1</asp:ListItem>
+                <asp:ListItem Value="2">选项2</asp:ListItem>
+              </asp:DropDownList>
+    重要属性：Items         复选框列表的选项集合
+              Selected      Items集合元素属性，对应选项的选择状态，True为选中，False为未选中
+ 
+RequiredFieldValidator控件
+    功能说明：验证控件必须输入，未输入时或输入与初始值相同时提示错误信息
+    命名前缀：ReqVdt
+    ASPX代码：<asp:RequiredFieldValidator ID="ReqVdtName" runat="server"
+                ErrorMessage="未输入姓名" ControlToValidate="TxtSample">
+              </asp:RequiredFieldValidator>
+    重要属性：ControlToValidate 被验证的控件的Name
+              ErrorMessage      验证失败的提示信息
+              InitialValue      InitialValue如果为空，被验证的控件的内容为空则验证失败，
+                                如果不为空，被验证的控件的内容如果和InitialValue值一样则验证失败。
+ 
+RangeValidator控件
+    功能说明：输入范围验证，输入值的范围必须在指定的范围之内。
+    命名前缀：RngVdt
+    ASPX代码：<asp:RangeValidator ID="RngVdtSample" runat="server"
+                ControlToValidate="TxtAge" ErrorMessage="年龄必须在1-150之间。"
+                Type="Integer" MinimumValue="1" MaximumValue="150">
+              </asp:RangeValidator>
+    重要属性：ControlToValidate 被验证的控件的Name
+              ErrorMessage      验证失败的提示信息
+              Type              被验证数据的类型，可以是字符串、数值和日期型
+              MinimumValue      最小值
+              MaximumValue      最大值
+ 
+CompareValidator控件
+    功能说明：验证输入值与指定值的大小关系，输入值必须符合与指定值的大小关系
+    命名前缀：CmpVdt
+    ASPX代码：<asp:CompareValidator ID="CmpVdtSample" runat="server"
+                ControlToValidate="TxtBirthday" ErrorMessage="生日不能晚于2009/8/31"
+                Type="Date" perator="LessThanEqual" ValueToCompare="2009/8/31">
+              </asp:CompareValidator>
+    重要属性：ControlToValidate 被验证的控件的Name
+              ErrorMessage      验证失败的提示信息
+              Type              被验证数据的类型，可以是字符串、数值和日期型
+              Operator          与指定值的大小关系
+              ValueToCompare    指定进行大小比较的值
+              ControlToCompare  指定进行大小比较的控件
+ 
+RegularExpressionValidator控件
+    功能说明：通过正则表达式验证输入值
+    命名前缀：RegVdt
+    ASPX代码：<asp:RegularExpressionValidator ID="RegVdtSample" runat="server"
+                ControlToValidate="TxtZip" ErrorMessage="邮编格式不正确"
+                ValidationExpression="\d{6}">
+              </asp:RegularExpressionValidator>
+    重要属性：ControlToValidate     被验证的控件的Name
+              ErrorMessage          验证失败的提示信息
+              ValidationExpression  用于验证的正则表达式
+ 
+CustomValidator控件
+    功能说明：通过自定义函数验证输入值
+    命名前缀：RegVdt
+    ASPX代码：<asp:CustomValidator ID="CtmVdtSample" runat="server"
+                ControlToValidate="TxtSex" ErrorMessage="性别应为男或女"
+                ClientValidationFunction="ValidateSex" >
+              </asp:CustomValidator>
+              <script. type="text/javascript">
+              function ValidateSex(source,args)
+              {
+                args.IsValid = (args.Value=="男" || args.Value=="女");
+              }
+              </script>
+    重要属性：ControlToValidate         被验证的控件的Name
+              ErrorMessage              验证失败的提示信息
+              ClientValidationFunction  客户端验证函数，args.Value为验证内容，args.IsValid为验证结果
+              OnServerValidate          服务端验证时间，通过事件过程实现，args.Value为验证内容，args.IsValid为验证结果
+ 
+ValidationSummary控件
+    功能说明：汇总方式显示错误信息，如不希望显示内联验证控件的错误，将内联验证控件的Display属性设置为None,
+              或设置Text属性，验证错误时Validator控件显示Text，ValidationSummary控件显示ErrorMessage
+    命名前缀：VdtSum
+    ASPX代码：<asp:ValidationSummary ID="VdtSumSample" runat="server" ShowMessageBox="True" ShowSummary="False" />
+    重要属性：ShowMessageBox    以对话框显示错误信息
+              ShowSummary       在网页上显示错误信息
+              DisplayMode       显示错误信息方式
+
+			
+			
+服务器端控件
+
+Label控件
+
+Label控件用如下方法定义：
+<asp:Label id="label1" font-size="14" font-bold="true" forecolor="red" Text="标签控件" runat=server></asp:Label>或者
+<asp:Label id="Label1" font-size="14" font-bold="true" forecolor="red" runat=server>
+标签控件</asp:Label>
+下边介绍其常用的属性：
+l  属性Text：显示的文本
+l  属性ForeColor 文本的颜色，颜色可以取：红色=System.Drawing.Color.Red。黑色= System.Drawing.Color.Black等等。
+l  字体的属性：黑体为Font.Bold=true，斜体为Font.Italic=true等等。
+l  属性BackColor：背景色
+l  属性id：相当Windows应用程序中控件的Name属性，用来区分不同对象。
+l  属性sp:Label：表示本控件是Label控件。
+l  属性runat=server表示次控件运行在服务器段，由Web服务器解释。
+
+TextBox控件
+
+Label控件用如下方法定义：
+<asp:TextBox id="textBox1" runat=server></asp:TextBox>
+常用的属性如下：
+l  属性：Text 显示的文本
+l  属性：TextMode=SingleLine 为编辑框，TextMode=MultiLine 为多行编辑框，可以有滚动条。TextMode=PassWord 为口令编辑框。
+l  属性：MaxLength 编辑框和口令编辑框时，允许输入的最多字符数。
+l  属性：Rows 多行编辑框时表示行数
+l  事件TextChanged：控件中文本发生变化。
+
+Button、LinkButton和ImageButton控件
+
+Button控件已介绍过了，Text为按钮的标题，单击事件为：Click。
+LinkButton控件：为超级链接形式的按钮，Text为按钮超级链接形式的标题，单击事件为Click。使用方法同Button控件，可为其增加单击事件Click的事件函数。
+ImageButton控件：有些按钮需要在按钮上增加图案，例如工具条中的按钮，可以使用ImageButton控件。属性ImageUrl为图案的路径，一般最好和网页文件放在同一个目录下，此时，控件定义如下：
+<asp:ImageButton id="ImageButton1" runat="server" ImageUrl="t1.bmp"></asp:ImageButton
+使用方法同Button控件，可为其增加单击事件Click的事件函数。
+
+CheckBox和CheckBoxList控件
+
+CheckBoxList控件可以创建一组若干CheckBox按钮，这些按钮有相同的性质。这些CheckBox按钮可以多选，不选或都选，可用来表示一些可共存的特性，例如一个人的爱好。下面例子在窗口中加一Label控件用来显示某人的爱好，增加两个CheckBox按钮，一个代表是否爱好音乐，一个代表是否爱好文学，每当用鼠标单击CheckBox按钮选择或不选择爱好，Label控件显示实际的爱好。具体步骤如下：
+(1)创建一个Web应用程序框架，选择菜单命令建立一个新空白窗体。
+(2)放工具箱的Label控件到窗体,其属性[Text]=“你的爱好是：”。
+(3)放工具箱的CheckBoxList控件到窗体。
+(4)单击属性Items后的按钮，出现集合编辑器对话框。单击添加按钮，增加一个CheckBox按钮，修改其Text属性为”音乐”，用同样方法增加另一个CheckBox按钮，修改其Text属性为”文学”。注意爱好是可以多选的，因此必须用CheckBox控件。
+(5)设定属性AutoPosBack=true。
+(6)为CheckBox1按钮事件(SelectedIndexChanged)函数增加语句如下：
+private void CheckBoxList1_SelectedIndexChanged(object sender, System.EventArgs e)
+{
+     String s="你的爱好是：";
+     for(int i=0;i<2;i++)
+         {
+              if(CheckBoxList1.Items[i].Selected)
+                   s=s+CheckBoxList1.Items[i].Text;
+         }
+     Label1.Text=s;
+}
+(7)编译，运行，选中音乐显示：你的爱好是：音乐，再选中文学显示：你的爱好是：音乐文学，…。
+
+RadioButton和RadioButtonList控件
+
+有一类特性是互斥的，例如性别男女，选择这类特性可用RadioButtonList控件，该控件的最大特点是它有多个按钮，但只能选其中的一个按钮，下面是一个例子，两个单选按钮分别为男和女，用Label控件显示选择的的结果。具体步骤如下：
+(1) 创建一个Web应用程序框架，选择菜单命令建立一个新空白窗体。
+(2) 放工具箱的Label控件到窗体,其属性[Text]=“男”。
+(3) 放工具箱的RadioButtonList控件到窗体。
+(4) 单击属性Items后的按钮，出现集合编辑器对话框。单击添加按钮，增加一个RadioButton按钮，修改其Text属性为”男”， 修改其Selected属性为true。用同样方法增加另一个RadioButton按钮，修改其Text属性为”女”，修改其Selected属性为法false。
+(5) 设定属性AutoPosBack=true。
+(6) 为SelectedIndexChanged事件增加事件函数如下：
+private void RadioButtonList1_SelectedIndexChanged(object sender, System.EventArgs e)
+         {
+             
+              if(RadioButtonList1.SelectedIndex==0)
+                 Label1.Text="男";
+              else
+                   Label1.Text="女";
+         }
+(7)    编译，运行，单击RadioButtonList中的两个RadioButton按钮，显示所作的选择。请想一想和CheckBox按钮的区别。
+
+Image控件
+
+Image控件用来显示图像，其属性AlternateText为字符串类型，如果图形不被正确显示，则显示此字符串。属性ImageAlign为图形对齐方式。ImageUrl为图形的URL地址。下例，增加3个单选按钮，根据单选按钮那个被选中，显示不同的图像。具体步骤如下：
+(1) 创建一个Web应用程序框架，选择菜单命令建立一个新空白窗体。
+(2) 放工具箱的RadioButtonList控件到窗体。
+(3) 单击属性Items后的按钮，出现集合编辑器对话框。单击添加按钮，增加一个RadioButton按钮，修改Text属性为”图1”，修改Value属性为”p1.jpg”，修改其Selected属性为true。用同样方法增加另一个RadioButton按钮，修改其Text属性为”图2”， 修改Value属性为”p2.jpg”，修改其Selected属性为法false。
+(4) 设定属性AutoPosBack=true。
+(5) 为RadioButtonList控件的SelectedIndexChanged事件增加事件函数如下：
+private void RadioButtonList1_SelectedIndexChanged(object sender, System.EventArgs e)
+         {
+              Image1.ImageUrl=RadioButtonList1.SelectedItem.Value;
+     }
+(6)    为Page_Load事件函数增加语句：
+private void Page_Load(object sender, System.EventArgs e)
+         {
+              // 在此处放置用户代码以初始化页面
+              Image1.ImageUrl=RadioButtonList1.Items[0].Value;
+         }
+(7)    编译，链接，运行，单击RadioButtonList中的两个RadioButton按钮，显示不同的图像。
+
+HyperLink控件
+
+HyperLink控件是超级链接控件，用来从一个网页定向到另一个网页。属性Text为设置超级链接的文字。也可以使用图形完成超级链接，ImageUrl为图形的URL。属性NavigateUrl是定向到另一个网页的URL。属性Target=_blank，打开一个新窗口，否则在原窗口打开。实现超级链接的例子的具体步骤如下：
+(1) 创建一个Web应用程序框架，选择菜单命令建立一个新空白窗体。
+(2)    放工具箱的HyperLink控件到窗体。
+(3)    修改属性Text=” 超级链接”。
+(4)    单击属性NavigateUrl后的按钮，出现选择URL对话框，URL类型选择为与根相关的，URL编辑框添入/bookExample/c412.aspx。
+(5)    编译，链接，运行，单击HyperLink控件，在原窗口代开另一个网页。如属性Target=_blank，打开一个新窗口显示新网页。
+10.1.8Table、TableCell和TableRow控件
+这是一个表格控件，创建表格的具体步骤如下：
+(1)    创建一个Web应用程序框架，选择菜单命令建立一个新空白窗体。
+(2)    放工具箱的Table控件到窗体。
+(3)    单击属性Row后的按钮，出现选择TableRow集合编辑器对话框，单击添加按钮，增加两行。
+(4)    选择第0个TableRow，单击属性Cell后的按钮，出现选择TableCell集合编辑器对话框，单击添加按钮，增加三列。修改每列的属性Text，分别为：课程总论、刚体静力学、弹性静力学。
+(5)    选择第1个TableRow，单击属性Cell后的按钮，出现选择TableCell集合编辑器对话框，单击添加按钮，增加三列。修改每列的属性Text，分别为：雅舍、孩子、音乐。
+(6)    可以看到两行三列的表，运行看一下。
+
+DrowDownList控件
+
+这是一个下拉列表控件，创建下拉列表的具体步骤如下：
+(1)    创建一个Web应用程序框架，选择菜单命令建立一个新空白窗体。
+(2)    放工具箱的DrowDownList控件到窗体。
+(3)    单击属性Items后的按钮，出现选择ListItem集合编辑器对话框，单击添加按钮，增加三项。修改每项的属性Text，分别为：课程总论、刚体静力学、弹性静力学。
+(4)    放工具箱的Label控件到窗体，id=Label1。
+(5)    放工具箱的Button控件到窗体，为单击确定按钮事件(Click)函数增加语句(双击Click事件)：
+private void Button1_Click(object sender, System.EventArgs e)
+         {
+              Label1.Text=DropDownList1.SelectedItem.Text;
+         }
+(6)    编译，链接，运行，从下拉列表选择刚体静力学，单击Button控件，Label1标签控件显示刚体静力学。
+
+
+
+
+
+
+
+
+
+
+
